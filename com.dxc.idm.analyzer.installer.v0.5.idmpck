@@ -1,0 +1,901 @@
+<IDM EXPORTED_ON="2024-10-01 07:33:43.43" IS_PACKAGE_FOLDER_EXPORT="0" PACKAGE_TRANSPORT_VERSION="8#0#8#2020#0#1#800SP8#1815#1815#1807" SCHEMA_VERSION="1815">
+<PACKAGES>
+<PACKAGE MCQUALIFIEDNAME="com.dxc.idm.analyzer.installer">
+<MCDISPLAYNAME>com.dxc.idm.analyzer.installer</MCDISPLAYNAME>
+<MCLASTMODIFIED>1727768001400</MCLASTMODIFIED>
+<MCMAJORVERSION>0</MCMAJORVERSION>
+<MCMINORVERSION>5</MCMINORVERSION>
+<MCPACKAGELEVEL>1815</MCPACKAGELEVEL>
+<MCPACKAGETYPE>0</MCPACKAGETYPE>
+<MCQUALIFIEDNAME>com.dxc.idm.analyzer.installer</MCQUALIFIEDNAME>
+<USES>
+<USE>
+<MCFROMREFERENCE>A55171DC-3E93-4F12-9B48-34D4790E3FB2</MCFROMREFERENCE>
+<MCFROMTYPE>8</MCFROMTYPE>
+<MCMINORVERSION>17</MCMINORVERSION>
+<MCPACKAGEID>com.dxc.idm.analyzer.installer</MCPACKAGEID>
+<MCTOQUALIFIEDNAME>com.sap.idm.provisioning.engine:jscript.sap_core_callStoredProcedure</MCTOQUALIFIEDNAME>
+<MCTOTYPE>12</MCTOTYPE>
+<MCVERSION>1</MCVERSION>
+<TOUSAGETYPE>1</TOUSAGETYPE>
+</USE>
+</USES>
+<JOBS>
+<JOB JOBGUID="5ABABFDC-0BE6-427D-8821-BE274EDE4F0F" MCPACKAGEID="com.dxc.idm.analyzer.installer">
+<ACTIVE>1</ACTIVE>
+<AUTOCREATED>0</AUTOCREATED>
+<BOOTSTRAPJOB>0</BOOTSTRAPJOB>
+<CHANGED_BY>MXMC_admin</CHANGED_BY>
+<CHANGED_DATE>1727767897930</CHANGED_DATE>
+<ENGINE_TYPE>2</ENGINE_TYPE>
+<GROUP_ID>8AE17170-062E-4A6E-BB94-2706ADE8A31B</GROUP_ID>
+<JOBDEFINITION>
+<mx:EMS xmlns:mx="http://www.maxware.com/EMS">
+<mx:GUID>5ABABFDC-0BE6-427D-8821-BE274EDE4F0F</mx:GUID>
+<mx:VERSION>1.0</mx:VERSION>
+<mx:DSEJobs>
+<mx:Sequence>
+<mx:Step Enabled="TRUE" Key="New Job 801"/>
+</mx:Sequence>
+<mx:Job name="New Job 801">
+<mx:Description/>
+<mx:Sequence>
+<mx:Step Enabled="TRUE" Key="43e99fdb-5e07-487b-bd72-4870beb95003"/>
+<mx:Step Enabled="TRUE" Key="f99dc719-ddfe-4778-872e-f07dbba9419e"/>
+<mx:Step Enabled="TRUE" Key="ed42bb6f-52a7-4758-bcfc-cf501070f1af"/>
+</mx:Sequence>
+<mx:Globals/>
+<mx:Functions/>
+<mx:Common>
+<ENGINETYPE>1</ENGINETYPE>
+<SCRIPTENG>null</SCRIPTENG>
+<EVLOG>0</EVLOG>
+<ERRLOG>%$ddm.ddmpath%\DSE.log</ERRLOG>
+<XLRESET>1</XLRESET>
+<PASSDOC>Copyright (C) 2024 DXC Technology
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see &lt;https://www.gnu.org/licenses/&gt;.</PASSDOC>
+<SNMPTRAPLEVEL>0</SNMPTRAPLEVEL>
+<MAXERROR>0</MAXERROR>
+<LOGLIMIT>25</LOGLIMIT>
+<RIGHT_TRIM>0</RIGHT_TRIM>
+<MCLOGLEVEL>1</MCLOGLEVEL>
+</mx:Common>
+<mx:Pass name="43e99fdb-5e07-487b-bd72-4870beb95003">
+<TYPE>ToIDStore</TYPE>
+<DESCRIPTION>Remove MX_REPORT entries</DESCRIPTION>
+<REPOSITORY>0</REPOSITORY>
+<UPDATEDB>%$ddm.identitycenter%</UPDATEDB>
+<MAXDELETE>5%</MAXDELETE>
+<AUDITLEVEL>0</AUDITLEVEL>
+<DELTAENABLED>0</DELTAENABLED>
+<SKIP>0</SKIP>
+<JUSTDELTA>0</JUSTDELTA>
+<MARKDEL>0</MARKDEL>
+<AUTODELETE>0</AUTODELETE>
+<CURRTAB>2</CURRTAB>
+<READFROMPVO>0</READFROMPVO>
+<FROMSQL>SELECT mskey FROM idmv_vallink_basic WITH(nolock) WHERE mcAttrName = 'MSKEYVALUE' and mcSearchValue LIKE 'DXC:REPORT:ANALYZER:%'</FROMSQL>
+<FILTEREDITSTATUS>16</FILTEREDITSTATUS>
+<USEIDSTORE>1</USEIDSTORE>
+<IDSTORE>-- Self --</IDSTORE>
+<USERINFO>JobId=%$ddm.mcjob%</USERINFO>
+<DELIMITER>|</DELIMITER>
+<STOREID>-- Self --</STOREID>
+<DATABASEURL>%$ddm.identitycenter%</DATABASEURL>
+<PROBE>0</PROBE>
+<SOURCEREPOSITORY>0</SOURCEREPOSITORY>
+<mx:Class>
+<mx:attr name="MSKEYVALUE">
+<mx:value>%MSKEYVALUE%</mx:value>
+</mx:attr>
+<mx:attr name="MX_ENTRYTYPE">
+<mx:value>MX_REPORT</mx:value>
+</mx:attr>
+<mx:attr name="changeType">
+<mx:value>delete</mx:value>
+</mx:attr>
+</mx:Class>
+<SOURCEENTRYTYPE/>
+</mx:Pass>
+<mx:Pass name="f99dc719-ddfe-4778-872e-f07dbba9419e">
+<TYPE>ToIDStore</TYPE>
+<DESCRIPTION>Remove role for UI access control</DESCRIPTION>
+<REPOSITORY>0</REPOSITORY>
+<UPDATEDB>%$ddm.identitycenter%</UPDATEDB>
+<MAXDELETE>5%</MAXDELETE>
+<AUDITLEVEL>0</AUDITLEVEL>
+<DELTAENABLED>0</DELTAENABLED>
+<SKIP>0</SKIP>
+<JUSTDELTA>0</JUSTDELTA>
+<MARKDEL>0</MARKDEL>
+<AUTODELETE>0</AUTODELETE>
+<CURRTAB>2</CURRTAB>
+<READFROMPVO>0</READFROMPVO>
+<FILTEREDITSTATUS>0</FILTEREDITSTATUS>
+<USEIDSTORE>1</USEIDSTORE>
+<USERINFO>JobId=%$ddm.mcjob%</USERINFO>
+<DELIMITER>|</DELIMITER>
+<STOREID>-- Self --</STOREID>
+<DATABASEURL>%$ddm.identitycenter%</DATABASEURL>
+<PROBE>0</PROBE>
+<SOURCEREPOSITORY>0</SOURCEREPOSITORY>
+<mx:Class>
+<mx:attr name="MSKEYVALUE">
+<mx:value>ROLE:IDM:DXC_ANALYZER:UI_ACCESS</mx:value>
+</mx:attr>
+<mx:attr name="MX_ENTRYTYPE">
+<mx:value>MX_ROLE</mx:value>
+</mx:attr>
+<mx:attr name="changeType">
+<mx:value>delete</mx:value>
+</mx:attr>
+</mx:Class>
+<SOURCEENTRYTYPE/>
+</mx:Pass>
+<mx:Pass name="ed42bb6f-52a7-4758-bcfc-cf501070f1af">
+<TYPE>ToIDStore</TYPE>
+<DESCRIPTION>Remove questionnaire answers</DESCRIPTION>
+<REPOSITORY>0</REPOSITORY>
+<UPDATEDB>%$ddm.identitycenter%</UPDATEDB>
+<MAXDELETE>5%</MAXDELETE>
+<AUDITLEVEL>0</AUDITLEVEL>
+<DELTAENABLED>0</DELTAENABLED>
+<SKIP>0</SKIP>
+<JUSTDELTA>0</JUSTDELTA>
+<MARKDEL>0</MARKDEL>
+<AUTODELETE>0</AUTODELETE>
+<CURRTAB>2</CURRTAB>
+<READFROMPVO>0</READFROMPVO>
+<FROMSQL>SELECT DISTINCT(mskey) FROM idmv_vallink_basic WITH(nolock) WHERE mcAttrName LIKE 'DXC_ANALYZER_QUESTIONNAIRE_%'</FROMSQL>
+<FILTEREDITSTATUS>16</FILTEREDITSTATUS>
+<USEIDSTORE>1</USEIDSTORE>
+<IDSTORE>-- Self --</IDSTORE>
+<USERINFO>JobId=%$ddm.mcjob%</USERINFO>
+<DELIMITER>|</DELIMITER>
+<STOREID>-- Self --</STOREID>
+<DATABASEURL>%$ddm.identitycenter%</DATABASEURL>
+<PROBE>0</PROBE>
+<SOURCEREPOSITORY>0</SOURCEREPOSITORY>
+<mx:Class>
+<mx:attr name="MSKEYVALUE">
+<mx:value>%MSKEYVALUE%</mx:value>
+</mx:attr>
+<mx:attr name="MX_ENTRYTYPE">
+<mx:value>MX_PERSON</mx:value>
+</mx:attr>
+<mx:attr name="changeType">
+<mx:value>modify</mx:value>
+</mx:attr>
+<mx:attr name="DXC_ANALYZER_QUESTIONNAIRE_1">
+<mx:value>%%</mx:value>
+</mx:attr>
+<mx:attr name="DXC_ANALYZER_QUESTIONNAIRE_2">
+<mx:value>%%</mx:value>
+</mx:attr>
+<mx:attr name="DXC_ANALYZER_QUESTIONNAIRE_3">
+<mx:value>%%</mx:value>
+</mx:attr>
+<mx:attr name="DXC_ANALYZER_QUESTIONNAIRE_4">
+<mx:value>%%</mx:value>
+</mx:attr>
+<mx:attr name="DXC_ANALYZER_QUESTIONNAIRE_5">
+<mx:value>%%</mx:value>
+</mx:attr>
+<mx:attr name="DXC_ANALYZER_QUESTIONNAIRE_6">
+<mx:value>%%</mx:value>
+</mx:attr>
+<mx:attr name="DXC_ANALYZER_QUESTIONNAIRE_7">
+<mx:value>%%</mx:value>
+</mx:attr>
+<mx:attr name="DXC_ANALYZER_QUESTIONNAIRE_8">
+<mx:value>%%</mx:value>
+</mx:attr>
+<mx:attr name="DXC_ANALYZER_QUESTIONNAIRE_9">
+<mx:value>%%</mx:value>
+</mx:attr>
+<mx:attr name="DXC_ANALYZER_QUESTIONNAIRE_10">
+<mx:value>%%</mx:value>
+</mx:attr>
+<mx:attr name="DXC_ANALYZER_QUESTIONNAIRE_BENEFICIAL_1">
+<mx:value>%%</mx:value>
+</mx:attr>
+<mx:attr name="DXC_ANALYZER_QUESTIONNAIRE_BENEFICIAL_2">
+<mx:value>%%</mx:value>
+</mx:attr>
+</mx:Class>
+<SOURCEENTRYTYPE/>
+</mx:Pass>
+</mx:Job>
+</mx:DSEJobs>
+</mx:EMS>
+</JOBDEFINITION>
+<MAX_LOGENTRIES>100</MAX_LOGENTRIES>
+<MCPUBLIC>0</MCPUBLIC>
+<MCREFERENCESTATUS>-1</MCREFERENCESTATUS>
+<MCSCRIPTSTATUS>0</MCSCRIPTSTATUS>
+<MCSOURCEGUID>5ABABFDC-0BE6-427D-8821-BE274EDE4F0F</MCSOURCEGUID>
+<MULTIPROVISION>0</MULTIPROVISION>
+<MXPROTECTED>0</MXPROTECTED>
+<NAME>ZZ - Uninstall</NAME>
+<PRIORITY_ACTUAL>20</PRIORITY_ACTUAL>
+<PRIORITY_DEF>20</PRIORITY_DEF>
+<PROVISION>0</PROVISION>
+<REVISION_NUMBER>0</REVISION_NUMBER>
+<SCHEDULE_RULE>On demand</SCHEDULE_RULE>
+<STATE>1</STATE>
+</JOB>
+<JOB JOBGUID="98756D0D-104F-4A00-BADF-6B367942AC90" MCPACKAGEID="com.dxc.idm.analyzer.installer">
+<ACTIVE>1</ACTIVE>
+<AUTOCREATED>0</AUTOCREATED>
+<BOOTSTRAPJOB>0</BOOTSTRAPJOB>
+<CHANGED_BY>MXMC_admin</CHANGED_BY>
+<CHANGED_DATE>1727767897917</CHANGED_DATE>
+<ENGINE_TYPE>2</ENGINE_TYPE>
+<GROUP_ID>8AE17170-062E-4A6E-BB94-2706ADE8A31B</GROUP_ID>
+<JOBDEFINITION>
+<mx:EMS xmlns:mx="http://www.maxware.com/EMS">
+<mx:GUID>98756D0D-104F-4A00-BADF-6B367942AC90</mx:GUID>
+<mx:VERSION>1.0</mx:VERSION>
+<mx:DSEJobs>
+<mx:Sequence>
+<mx:Step Enabled="TRUE" Key="New Job 82"/>
+</mx:Sequence>
+<mx:Job name="New Job 82">
+<mx:Description/>
+<mx:Sequence>
+<mx:Step Enabled="TRUE" Key="3047d1ae-6787-4bbd-b7a6-cea3dae368c5"/>
+</mx:Sequence>
+<mx:Globals/>
+<mx:Functions/>
+<mx:Common>
+<ENGINETYPE>1</ENGINETYPE>
+<SCRIPTENG>null</SCRIPTENG>
+<EVLOG>0</EVLOG>
+<ERRLOG>%$ddm.ddmpath%\DSE.log</ERRLOG>
+<XLRESET>1</XLRESET>
+<PASSDOC>Copyright (C) 2024 DXC Technology
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see &lt;https://www.gnu.org/licenses/&gt;.</PASSDOC>
+<SNMPTRAPLEVEL>0</SNMPTRAPLEVEL>
+<MAXERROR>0</MAXERROR>
+<LOGLIMIT>25</LOGLIMIT>
+<RIGHT_TRIM>0</RIGHT_TRIM>
+<MCLOGLEVEL>1</MCLOGLEVEL>
+</mx:Common>
+<mx:Pass name="3047d1ae-6787-4bbd-b7a6-cea3dae368c5">
+<TYPE>ToIDStore</TYPE>
+<DESCRIPTION>Define IDM role for UI access</DESCRIPTION>
+<REPOSITORY>0</REPOSITORY>
+<UPDATEDB>%$ddm.identitycenter%</UPDATEDB>
+<MAXDELETE>5%</MAXDELETE>
+<AUDITLEVEL>0</AUDITLEVEL>
+<DELTAENABLED>0</DELTAENABLED>
+<SKIP>0</SKIP>
+<JUSTDELTA>0</JUSTDELTA>
+<MARKDEL>0</MARKDEL>
+<AUTODELETE>0</AUTODELETE>
+<CURRTAB>2</CURRTAB>
+<READFROMPVO>0</READFROMPVO>
+<FILTEREDITSTATUS>0</FILTEREDITSTATUS>
+<USEIDSTORE>1</USEIDSTORE>
+<SOURCEENTRYTYPE>0</SOURCEENTRYTYPE>
+<USERINFO>JobId=%$ddm.mcjob%</USERINFO>
+<DELIMITER>|</DELIMITER>
+<STOREID>-- Self --</STOREID>
+<DATABASEURL>%$ddm.identitycenter%</DATABASEURL>
+<PROBE>0</PROBE>
+<SOURCEREPOSITORY>0</SOURCEREPOSITORY>
+<mx:Class>
+<mx:attr name="MSKEYVALUE">
+<mx:value>ROLE:IDM:DXC_ANALYZER:UI_ACCESS</mx:value>
+</mx:attr>
+<mx:attr name="MX_ENTRYTYPE">
+<mx:value>MX_ROLE</mx:value>
+</mx:attr>
+<mx:attr name="#changeType">
+<mx:value>add</mx:value>
+</mx:attr>
+<mx:attr name="DISPLAYNAME">
+<mx:value>DXC IDM Analyzer UI Access</mx:value>
+</mx:attr>
+<mx:attr name="DESCRIPTION">
+<mx:value>This role grants access to the WebDynPro Interface of the DXC IDM Analyzer and includes access to the reporting tab of the IDM UI.</mx:value>
+</mx:attr>
+<mx:attr name="MXAC_ENTRY">
+<mx:value>2</mx:value>
+</mx:attr>
+<mx:attr name="MXAC_MEMBERS">
+<mx:value>2</mx:value>
+</mx:attr>
+<mx:attr name="MX_OWNER">
+<mx:value>{A}&lt;MX_ROLE:ADMIN&gt;</mx:value>
+</mx:attr>
+<mx:attr name="MXMEMBER_MX_PRIVILEGE">
+<mx:value>{A}&lt;MX_PRIV:WD:TAB_REPORT&gt;</mx:value>
+</mx:attr>
+</mx:Class>
+</mx:Pass>
+</mx:Job>
+</mx:DSEJobs>
+</mx:EMS>
+</JOBDEFINITION>
+<MAX_LOGENTRIES>100</MAX_LOGENTRIES>
+<MCPUBLIC>0</MCPUBLIC>
+<MCREFERENCESTATUS>-1</MCREFERENCESTATUS>
+<MCSCRIPTSTATUS>0</MCSCRIPTSTATUS>
+<MCSOURCEGUID>98756D0D-104F-4A00-BADF-6B367942AC90</MCSOURCEGUID>
+<MULTIPROVISION>0</MULTIPROVISION>
+<MXPROTECTED>0</MXPROTECTED>
+<NAME>02 - Create IDM role for UI access</NAME>
+<PRIORITY_ACTUAL>20</PRIORITY_ACTUAL>
+<PRIORITY_DEF>20</PRIORITY_DEF>
+<PROVISION>0</PROVISION>
+<REVISION_NUMBER>0</REVISION_NUMBER>
+<SCHEDULE_RULE>On demand</SCHEDULE_RULE>
+<STATE>1</STATE>
+</JOB>
+<JOB JOBGUID="A55171DC-3E93-4F12-9B48-34D4790E3FB2" MCPACKAGEID="com.dxc.idm.analyzer.installer">
+<ACTIVE>1</ACTIVE>
+<AUTOCREATED>0</AUTOCREATED>
+<BOOTSTRAPJOB>0</BOOTSTRAPJOB>
+<CHANGED_BY>MXMC_admin</CHANGED_BY>
+<CHANGED_DATE>1727767981710</CHANGED_DATE>
+<ENGINE_TYPE>2</ENGINE_TYPE>
+<GROUP_ID>8AE17170-062E-4A6E-BB94-2706ADE8A31B</GROUP_ID>
+<JOBDEFINITION>
+<mx:EMS xmlns:mx="http://www.maxware.com/EMS">
+<mx:GUID>A55171DC-3E93-4F12-9B48-34D4790E3FB2</mx:GUID>
+<mx:VERSION>1.0</mx:VERSION>
+<mx:DSEJobs>
+<mx:Sequence>
+<mx:Step Enabled="TRUE" Key="New Job 656"/>
+</mx:Sequence>
+<mx:Job name="New Job 656">
+<mx:Description/>
+<mx:Sequence>
+<mx:Step Enabled="TRUE" Key="82fef259-7a01-497b-998c-402265180bce"/>
+<mx:Step Enabled="TRUE" Key="9f76ef4d-0bf3-4c59-9b43-47c8b80c1ed4"/>
+<mx:Step Enabled="TRUE" Key="6889c7ad-300b-4a3b-a7d7-cf684e723278"/>
+<mx:Step Enabled="TRUE" Key="df6db80e-d8e4-4059-a023-4e24acb9ba98"/>
+<mx:Step Enabled="TRUE" Key="f2addb94-8b62-4db2-bb65-14f0ff2737ff"/>
+<mx:Step Enabled="TRUE" Key="ee64a570-4012-4c55-a34f-07fdab4a4d25"/>
+<mx:Step Enabled="TRUE" Key="72d2da02-691c-4813-8c2b-dde54642fb5d"/>
+<mx:Step Enabled="TRUE" Key="3f1dfb66-44ce-43e4-bc84-6908124bf012"/>
+<mx:Step Enabled="TRUE" Key="3297a487-ffa6-4b52-9890-9b7dad6c0c0e"/>
+<mx:Step Enabled="TRUE" Key="b073f8c3-6e4c-4b95-b4cf-ddf8ef053948"/>
+<mx:Step Enabled="TRUE" Key="98c83dd7-c961-4925-8011-56fe02fa1f54"/>
+<mx:Step Enabled="TRUE" Key="855a357c-f568-4628-bea6-4707d48b437a"/>
+</mx:Sequence>
+<mx:Globals/>
+
+<mx:Common>
+<ENGINETYPE>1</ENGINETYPE>
+<SCRIPTENG>null</SCRIPTENG>
+<EVLOG>0</EVLOG>
+<ERRLOG>%$ddm.ddmpath%\DSE.log</ERRLOG>
+<XLRESET>1</XLRESET>
+<PASSDOC>Copyright (C) 2024 DXC Technology
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see &lt;https://www.gnu.org/licenses/&gt;.</PASSDOC>
+<SNMPTRAPLEVEL>0</SNMPTRAPLEVEL>
+<MAXERROR>0</MAXERROR>
+<LOGLIMIT>25</LOGLIMIT>
+<RIGHT_TRIM>0</RIGHT_TRIM>
+<MCLOGLEVEL>1</MCLOGLEVEL>
+</mx:Common>
+<mx:Pass name="82fef259-7a01-497b-998c-402265180bce">
+<TYPE>ToODBC</TYPE>
+<DESCRIPTION>Create Attribute - Questionnaire 1</DESCRIPTION>
+<REPOSITORY>0</REPOSITORY>
+<UPDATEDB>%$ddm.identitycenter%</UPDATEDB>
+<MAXDELETE>5%</MAXDELETE>
+<AUDITLEVEL>0</AUDITLEVEL>
+<DELTAENABLED>0</DELTAENABLED>
+<SKIP>0</SKIP>
+<JUSTDELTA>0</JUSTDELTA>
+<MARKDEL>0</MARKDEL>
+<AUTODELETE>0</AUTODELETE>
+<CURRTAB>2</CURRTAB>
+<READFROMPVO>0</READFROMPVO>
+<FILTEREDITSTATUS>0</FILTEREDITSTATUS>
+<USEIDSTORE>1</USEIDSTORE>
+<TODB>%$ddm.identitycenter%</TODB>
+<SQLUPDATE>1</SQLUPDATE>
+<mx:Class>
+<mx:attr name="DeltaKey">
+<mx:value>No_DeltaKey</mx:value>
+</mx:attr>
+<mx:attr name=":">
+<mx:value>$FUNCTION.sap_core_callStoredProcedure(mxi_schema_create_attr_ns!!1,'DXC_ANALYZER_QUESTIONNAIRE_1','Do you use SAP HCM as employee lifecycle source via the standard VDS integration?','DXC IDM Analyzer Question 1',0,1)$$</mx:value>
+</mx:attr>
+<mx:attr name=":">
+<mx:value>$FUNCTION.sap_core_callStoredProcedure(mxi_schema_add_attr_to_oc_ns!!1,'MX_PERSON','DXC_ANALYZER_QUESTIONNAIRE_1',0,1)$$</mx:value>
+</mx:attr>
+<mx:attr name=":">
+<mx:value>$FUNCTION.sap_core_callStoredProcedure(mxi_schema_attr_set_prop!!1,'DXC_ANALYZER_QUESTIONNAIRE_1',0,0,5,'',0,'')$$</mx:value>
+</mx:attr>
+</mx:Class>
+<SOURCEENTRYTYPE/>
+</mx:Pass>
+<mx:Functions>
+<mx:Function Enabled="TRUE" ExternalScript="com.sap.idm.provisioning.engine:jscript.sap_core_callStoredProcedure" Script="JScript" name="sap_core_callStoredProcedure"/>
+</mx:Functions>
+<mx:Pass name="9f76ef4d-0bf3-4c59-9b43-47c8b80c1ed4">
+<TYPE>ToODBC</TYPE>
+<DESCRIPTION>Create Attribute - Questionnaire 2</DESCRIPTION>
+<REPOSITORY>0</REPOSITORY>
+<UPDATEDB>%$ddm.identitycenter%</UPDATEDB>
+<MAXDELETE>5%</MAXDELETE>
+<AUDITLEVEL>0</AUDITLEVEL>
+<DELTAENABLED>0</DELTAENABLED>
+<SKIP>0</SKIP>
+<JUSTDELTA>0</JUSTDELTA>
+<MARKDEL>0</MARKDEL>
+<AUTODELETE>0</AUTODELETE>
+<CURRTAB>2</CURRTAB>
+<READFROMPVO>0</READFROMPVO>
+<FILTEREDITSTATUS>0</FILTEREDITSTATUS>
+<USEIDSTORE>1</USEIDSTORE>
+<TODB>%$ddm.identitycenter%</TODB>
+<SQLUPDATE>1</SQLUPDATE>
+<mx:Class>
+<mx:attr name="DeltaKey">
+<mx:value>No_DeltaKey</mx:value>
+</mx:attr>
+<mx:attr name=":">
+<mx:value>$FUNCTION.sap_core_callStoredProcedure(mxi_schema_create_attr_ns!!1,'DXC_ANALYZER_QUESTIONNAIRE_2','Do you have an integration with GRC in your access request workflows?','DXC IDM Analyzer Question 2',0,1)$$</mx:value>
+</mx:attr>
+<mx:attr name=":">
+<mx:value>$FUNCTION.sap_core_callStoredProcedure(mxi_schema_add_attr_to_oc_ns!!1,'MX_PERSON','DXC_ANALYZER_QUESTIONNAIRE_2',0,1)$$</mx:value>
+</mx:attr>
+<mx:attr name=":">
+<mx:value>$FUNCTION.sap_core_callStoredProcedure(mxi_schema_attr_set_prop!!1,'DXC_ANALYZER_QUESTIONNAIRE_2',0,0,5,'',0,'')$$</mx:value>
+</mx:attr>
+</mx:Class>
+<SOURCEENTRYTYPE/>
+</mx:Pass>
+<mx:Pass name="6889c7ad-300b-4a3b-a7d7-cf684e723278">
+<TYPE>ToODBC</TYPE>
+<DESCRIPTION>Create Attribute - Questionnaire 3</DESCRIPTION>
+<REPOSITORY>0</REPOSITORY>
+<UPDATEDB>%$ddm.identitycenter%</UPDATEDB>
+<MAXDELETE>5%</MAXDELETE>
+<AUDITLEVEL>0</AUDITLEVEL>
+<DELTAENABLED>0</DELTAENABLED>
+<SKIP>0</SKIP>
+<JUSTDELTA>0</JUSTDELTA>
+<MARKDEL>0</MARKDEL>
+<AUTODELETE>0</AUTODELETE>
+<CURRTAB>2</CURRTAB>
+<READFROMPVO>0</READFROMPVO>
+<FILTEREDITSTATUS>0</FILTEREDITSTATUS>
+<USEIDSTORE>1</USEIDSTORE>
+<TODB>%$ddm.identitycenter%</TODB>
+<SQLUPDATE>1</SQLUPDATE>
+<mx:Class>
+<mx:attr name="DeltaKey">
+<mx:value>No_DeltaKey</mx:value>
+</mx:attr>
+<mx:attr name=":">
+<mx:value>$FUNCTION.sap_core_callStoredProcedure(mxi_schema_create_attr_ns!!1,'DXC_ANALYZER_QUESTIONNAIRE_3','Is there a concept in your IDM allowing for more than one identity record per person?','DXC IDM Analyzer Question 3',0,1)$$</mx:value>
+</mx:attr>
+<mx:attr name=":">
+<mx:value>$FUNCTION.sap_core_callStoredProcedure(mxi_schema_add_attr_to_oc_ns!!1,'MX_PERSON','DXC_ANALYZER_QUESTIONNAIRE_3',0,1)$$</mx:value>
+</mx:attr>
+<mx:attr name=":">
+<mx:value>$FUNCTION.sap_core_callStoredProcedure(mxi_schema_attr_set_prop!!1,'DXC_ANALYZER_QUESTIONNAIRE_3',0,0,5,'',0,'')$$</mx:value>
+</mx:attr>
+</mx:Class>
+<SOURCEENTRYTYPE/>
+</mx:Pass>
+<mx:Pass name="df6db80e-d8e4-4059-a023-4e24acb9ba98">
+<TYPE>ToODBC</TYPE>
+<DESCRIPTION>Create Attribute - Questionnaire 4</DESCRIPTION>
+<REPOSITORY>0</REPOSITORY>
+<UPDATEDB>%$ddm.identitycenter%</UPDATEDB>
+<MAXDELETE>5%</MAXDELETE>
+<AUDITLEVEL>0</AUDITLEVEL>
+<DELTAENABLED>0</DELTAENABLED>
+<SKIP>0</SKIP>
+<JUSTDELTA>0</JUSTDELTA>
+<MARKDEL>0</MARKDEL>
+<AUTODELETE>0</AUTODELETE>
+<CURRTAB>2</CURRTAB>
+<READFROMPVO>0</READFROMPVO>
+<FILTEREDITSTATUS>0</FILTEREDITSTATUS>
+<USEIDSTORE>1</USEIDSTORE>
+<TODB>%$ddm.identitycenter%</TODB>
+<SQLUPDATE>1</SQLUPDATE>
+<mx:Class>
+<mx:attr name="DeltaKey">
+<mx:value>No_DeltaKey</mx:value>
+</mx:attr>
+<mx:attr name=":">
+<mx:value>$FUNCTION.sap_core_callStoredProcedure(mxi_schema_create_attr_ns!!1,'DXC_ANALYZER_QUESTIONNAIRE_4','Does your IDM serve usage scenarios beyond managing identities, user accounts, roles and assignments?','DXC IDM Analyzer Question 4',0,1)$$</mx:value>
+</mx:attr>
+<mx:attr name=":">
+<mx:value>$FUNCTION.sap_core_callStoredProcedure(mxi_schema_add_attr_to_oc_ns!!1,'MX_PERSON','DXC_ANALYZER_QUESTIONNAIRE_4',0,1)$$</mx:value>
+</mx:attr>
+<mx:attr name=":">
+<mx:value>$FUNCTION.sap_core_callStoredProcedure(mxi_schema_attr_set_prop!!1,'DXC_ANALYZER_QUESTIONNAIRE_4',0,0,5,'',0,'')$$</mx:value>
+</mx:attr>
+</mx:Class>
+<SOURCEENTRYTYPE/>
+</mx:Pass>
+<mx:Pass name="f2addb94-8b62-4db2-bb65-14f0ff2737ff">
+<TYPE>ToODBC</TYPE>
+<DESCRIPTION>Create Attribute - Questionnaire 5</DESCRIPTION>
+<REPOSITORY>0</REPOSITORY>
+<UPDATEDB>%$ddm.identitycenter%</UPDATEDB>
+<MAXDELETE>5%</MAXDELETE>
+<AUDITLEVEL>0</AUDITLEVEL>
+<DELTAENABLED>0</DELTAENABLED>
+<SKIP>0</SKIP>
+<JUSTDELTA>0</JUSTDELTA>
+<MARKDEL>0</MARKDEL>
+<AUTODELETE>0</AUTODELETE>
+<CURRTAB>2</CURRTAB>
+<READFROMPVO>0</READFROMPVO>
+<FILTEREDITSTATUS>0</FILTEREDITSTATUS>
+<USEIDSTORE>1</USEIDSTORE>
+<TODB>%$ddm.identitycenter%</TODB>
+<SQLUPDATE>1</SQLUPDATE>
+<mx:Class>
+<mx:attr name="DeltaKey">
+<mx:value>No_DeltaKey</mx:value>
+</mx:attr>
+<mx:attr name=":">
+<mx:value>$FUNCTION.sap_core_callStoredProcedure(mxi_schema_create_attr_ns!!1,'DXC_ANALYZER_QUESTIONNAIRE_5','Do you use IDM reporting to serve audit requirements?','DXC IDM Analyzer Question 5',0,1)$$</mx:value>
+</mx:attr>
+<mx:attr name=":">
+<mx:value>$FUNCTION.sap_core_callStoredProcedure(mxi_schema_add_attr_to_oc_ns!!1,'MX_PERSON','DXC_ANALYZER_QUESTIONNAIRE_5',0,1)$$</mx:value>
+</mx:attr>
+<mx:attr name=":">
+<mx:value>$FUNCTION.sap_core_callStoredProcedure(mxi_schema_attr_set_prop!!1,'DXC_ANALYZER_QUESTIONNAIRE_5',0,0,5,'',0,'')$$</mx:value>
+</mx:attr>
+</mx:Class>
+<SOURCEENTRYTYPE/>
+</mx:Pass>
+<mx:Pass name="ee64a570-4012-4c55-a34f-07fdab4a4d25">
+<TYPE>ToODBC</TYPE>
+<DESCRIPTION>Create Attribute - Questionnaire 6</DESCRIPTION>
+<REPOSITORY>0</REPOSITORY>
+<UPDATEDB>%$ddm.identitycenter%</UPDATEDB>
+<MAXDELETE>5%</MAXDELETE>
+<AUDITLEVEL>0</AUDITLEVEL>
+<DELTAENABLED>0</DELTAENABLED>
+<SKIP>0</SKIP>
+<JUSTDELTA>0</JUSTDELTA>
+<MARKDEL>0</MARKDEL>
+<AUTODELETE>0</AUTODELETE>
+<CURRTAB>2</CURRTAB>
+<READFROMPVO>0</READFROMPVO>
+<FILTEREDITSTATUS>0</FILTEREDITSTATUS>
+<USEIDSTORE>1</USEIDSTORE>
+<TODB>%$ddm.identitycenter%</TODB>
+<SQLUPDATE>1</SQLUPDATE>
+<mx:Class>
+<mx:attr name="DeltaKey">
+<mx:value>No_DeltaKey</mx:value>
+</mx:attr>
+<mx:attr name=":">
+<mx:value>$FUNCTION.sap_core_callStoredProcedure(mxi_schema_create_attr_ns!!1,'DXC_ANALYZER_QUESTIONNAIRE_6','Are there any on-behalf-of or complex access control roles in UI?','DXC IDM Analyzer Question 6',0,1)$$</mx:value>
+</mx:attr>
+<mx:attr name=":">
+<mx:value>$FUNCTION.sap_core_callStoredProcedure(mxi_schema_add_attr_to_oc_ns!!1,'MX_PERSON','DXC_ANALYZER_QUESTIONNAIRE_6',0,1)$$</mx:value>
+</mx:attr>
+<mx:attr name=":">
+<mx:value>$FUNCTION.sap_core_callStoredProcedure(mxi_schema_attr_set_prop!!1,'DXC_ANALYZER_QUESTIONNAIRE_6',0,0,5,'',0,'')$$</mx:value>
+</mx:attr>
+</mx:Class>
+<SOURCEENTRYTYPE/>
+</mx:Pass>
+<mx:Pass name="72d2da02-691c-4813-8c2b-dde54642fb5d">
+<TYPE>ToODBC</TYPE>
+<DESCRIPTION>Create Attribute - Questionnaire 7</DESCRIPTION>
+<REPOSITORY>0</REPOSITORY>
+<UPDATEDB>%$ddm.identitycenter%</UPDATEDB>
+<MAXDELETE>5%</MAXDELETE>
+<AUDITLEVEL>0</AUDITLEVEL>
+<DELTAENABLED>0</DELTAENABLED>
+<SKIP>0</SKIP>
+<JUSTDELTA>0</JUSTDELTA>
+<MARKDEL>0</MARKDEL>
+<AUTODELETE>0</AUTODELETE>
+<CURRTAB>2</CURRTAB>
+<READFROMPVO>0</READFROMPVO>
+<FILTEREDITSTATUS>0</FILTEREDITSTATUS>
+<USEIDSTORE>1</USEIDSTORE>
+<TODB>%$ddm.identitycenter%</TODB>
+<SQLUPDATE>1</SQLUPDATE>
+<mx:Class>
+<mx:attr name="DeltaKey">
+<mx:value>No_DeltaKey</mx:value>
+</mx:attr>
+<mx:attr name=":">
+<mx:value>$FUNCTION.sap_core_callStoredProcedure(mxi_schema_create_attr_ns!!1,'DXC_ANALYZER_QUESTIONNAIRE_7','Do you use automatic delegation in IDM?','DXC IDM Analyzer Question 7',0,1)$$</mx:value>
+</mx:attr>
+<mx:attr name=":">
+<mx:value>$FUNCTION.sap_core_callStoredProcedure(mxi_schema_add_attr_to_oc_ns!!1,'MX_PERSON','DXC_ANALYZER_QUESTIONNAIRE_7',0,1)$$</mx:value>
+</mx:attr>
+<mx:attr name=":">
+<mx:value>$FUNCTION.sap_core_callStoredProcedure(mxi_schema_attr_set_prop!!1,'DXC_ANALYZER_QUESTIONNAIRE_7',0,0,5,'',0,'')$$</mx:value>
+</mx:attr>
+</mx:Class>
+<SOURCEENTRYTYPE/>
+</mx:Pass>
+<mx:Pass name="3f1dfb66-44ce-43e4-bc84-6908124bf012">
+<TYPE>ToODBC</TYPE>
+<DESCRIPTION>Create Attribute - Questionnaire 8</DESCRIPTION>
+<REPOSITORY>0</REPOSITORY>
+<UPDATEDB>%$ddm.identitycenter%</UPDATEDB>
+<MAXDELETE>5%</MAXDELETE>
+<AUDITLEVEL>0</AUDITLEVEL>
+<DELTAENABLED>0</DELTAENABLED>
+<SKIP>0</SKIP>
+<JUSTDELTA>0</JUSTDELTA>
+<MARKDEL>0</MARKDEL>
+<AUTODELETE>0</AUTODELETE>
+<CURRTAB>2</CURRTAB>
+<READFROMPVO>0</READFROMPVO>
+<FILTEREDITSTATUS>0</FILTEREDITSTATUS>
+<USEIDSTORE>1</USEIDSTORE>
+<TODB>%$ddm.identitycenter%</TODB>
+<SQLUPDATE>1</SQLUPDATE>
+<mx:Class>
+<mx:attr name="DeltaKey">
+<mx:value>No_DeltaKey</mx:value>
+</mx:attr>
+<mx:attr name=":">
+<mx:value>$FUNCTION.sap_core_callStoredProcedure(mxi_schema_create_attr_ns!!1,'DXC_ANALYZER_QUESTIONNAIRE_8','Do you have custom Java Logic that replaces native functionality?','DXC IDM Analyzer Question 8',0,1)$$</mx:value>
+</mx:attr>
+<mx:attr name=":">
+<mx:value>$FUNCTION.sap_core_callStoredProcedure(mxi_schema_add_attr_to_oc_ns!!1,'MX_PERSON','DXC_ANALYZER_QUESTIONNAIRE_8',0,1)$$</mx:value>
+</mx:attr>
+<mx:attr name=":">
+<mx:value>$FUNCTION.sap_core_callStoredProcedure(mxi_schema_attr_set_prop!!1,'DXC_ANALYZER_QUESTIONNAIRE_8',0,0,5,'',0,'')$$</mx:value>
+</mx:attr>
+</mx:Class>
+<SOURCEENTRYTYPE/>
+</mx:Pass>
+<mx:Pass name="3297a487-ffa6-4b52-9890-9b7dad6c0c0e">
+<TYPE>ToODBC</TYPE>
+<DESCRIPTION>Create Attribute - Questionnaire 9</DESCRIPTION>
+<REPOSITORY>0</REPOSITORY>
+<UPDATEDB>%$ddm.identitycenter%</UPDATEDB>
+<MAXDELETE>5%</MAXDELETE>
+<AUDITLEVEL>0</AUDITLEVEL>
+<DELTAENABLED>0</DELTAENABLED>
+<SKIP>0</SKIP>
+<JUSTDELTA>0</JUSTDELTA>
+<MARKDEL>0</MARKDEL>
+<AUTODELETE>0</AUTODELETE>
+<CURRTAB>2</CURRTAB>
+<READFROMPVO>0</READFROMPVO>
+<FILTEREDITSTATUS>0</FILTEREDITSTATUS>
+<USEIDSTORE>1</USEIDSTORE>
+<TODB>%$ddm.identitycenter%</TODB>
+<SQLUPDATE>1</SQLUPDATE>
+<mx:Class>
+<mx:attr name="DeltaKey">
+<mx:value>No_DeltaKey</mx:value>
+</mx:attr>
+<mx:attr name=":">
+<mx:value>$FUNCTION.sap_core_callStoredProcedure(mxi_schema_create_attr_ns!!1,'DXC_ANALYZER_QUESTIONNAIRE_9','Do you utilize a custom User Interface?','DXC IDM Analyzer Question 9',0,1)$$</mx:value>
+</mx:attr>
+<mx:attr name=":">
+<mx:value>$FUNCTION.sap_core_callStoredProcedure(mxi_schema_add_attr_to_oc_ns!!1,'MX_PERSON','DXC_ANALYZER_QUESTIONNAIRE_9',0,1)$$</mx:value>
+</mx:attr>
+<mx:attr name=":">
+<mx:value>$FUNCTION.sap_core_callStoredProcedure(mxi_schema_attr_set_prop!!1,'DXC_ANALYZER_QUESTIONNAIRE_9',0,0,5,'',0,'')$$</mx:value>
+</mx:attr>
+</mx:Class>
+<SOURCEENTRYTYPE/>
+</mx:Pass>
+<mx:Pass name="b073f8c3-6e4c-4b95-b4cf-ddf8ef053948">
+<TYPE>ToODBC</TYPE>
+<DESCRIPTION>Create Attribute - Questionnaire 10</DESCRIPTION>
+<REPOSITORY>0</REPOSITORY>
+<UPDATEDB>%$ddm.identitycenter%</UPDATEDB>
+<MAXDELETE>5%</MAXDELETE>
+<AUDITLEVEL>0</AUDITLEVEL>
+<DELTAENABLED>0</DELTAENABLED>
+<SKIP>0</SKIP>
+<JUSTDELTA>0</JUSTDELTA>
+<MARKDEL>0</MARKDEL>
+<AUTODELETE>0</AUTODELETE>
+<CURRTAB>2</CURRTAB>
+<READFROMPVO>0</READFROMPVO>
+<FILTEREDITSTATUS>0</FILTEREDITSTATUS>
+<USEIDSTORE>1</USEIDSTORE>
+<TODB>%$ddm.identitycenter%</TODB>
+<SQLUPDATE>1</SQLUPDATE>
+<mx:Class>
+<mx:attr name="DeltaKey">
+<mx:value>No_DeltaKey</mx:value>
+</mx:attr>
+<mx:attr name=":">
+<mx:value>$FUNCTION.sap_core_callStoredProcedure(mxi_schema_create_attr_ns!!1,'DXC_ANALYZER_QUESTIONNAIRE_10','Are there any external integrations to your SAP IDM system via REST or on database level?','DXC IDM Analyzer Question 10',0,1)$$</mx:value>
+</mx:attr>
+<mx:attr name=":">
+<mx:value>$FUNCTION.sap_core_callStoredProcedure(mxi_schema_add_attr_to_oc_ns!!1,'MX_PERSON','DXC_ANALYZER_QUESTIONNAIRE_10',0,1)$$</mx:value>
+</mx:attr>
+<mx:attr name=":">
+<mx:value>$FUNCTION.sap_core_callStoredProcedure(mxi_schema_attr_set_prop!!1,'DXC_ANALYZER_QUESTIONNAIRE_10',0,0,5,'',0,'')$$</mx:value>
+</mx:attr>
+</mx:Class>
+<SOURCEENTRYTYPE/>
+</mx:Pass>
+<mx:Pass name="98c83dd7-c961-4925-8011-56fe02fa1f54">
+<TYPE>ToODBC</TYPE>
+<DESCRIPTION>Create Attribute - Questionnaire Beneficial 1</DESCRIPTION>
+<REPOSITORY>0</REPOSITORY>
+<UPDATEDB>%$ddm.identitycenter%</UPDATEDB>
+<MAXDELETE>5%</MAXDELETE>
+<AUDITLEVEL>0</AUDITLEVEL>
+<DELTAENABLED>0</DELTAENABLED>
+<SKIP>0</SKIP>
+<JUSTDELTA>0</JUSTDELTA>
+<MARKDEL>0</MARKDEL>
+<AUTODELETE>0</AUTODELETE>
+<CURRTAB>2</CURRTAB>
+<READFROMPVO>0</READFROMPVO>
+<FILTEREDITSTATUS>0</FILTEREDITSTATUS>
+<USEIDSTORE>1</USEIDSTORE>
+<TODB>%$ddm.identitycenter%</TODB>
+<SQLUPDATE>1</SQLUPDATE>
+<mx:Class>
+<mx:attr name="DeltaKey">
+<mx:value>No_DeltaKey</mx:value>
+</mx:attr>
+<mx:attr name=":">
+<mx:value>$FUNCTION.sap_core_callStoredProcedure(mxi_schema_create_attr_ns!!1,'DXC_ANALYZER_QUESTIONNAIRE_BENEFICIAL_1','Is a cloud HR system like SuccessFactors available as employee record source?','DXC IDM Analyzer Question Beneficial 1',0,1)$$</mx:value>
+</mx:attr>
+<mx:attr name=":">
+<mx:value>$FUNCTION.sap_core_callStoredProcedure(mxi_schema_add_attr_to_oc_ns!!1,'MX_PERSON','DXC_ANALYZER_QUESTIONNAIRE_BENEFICIAL_1',0,1)$$</mx:value>
+</mx:attr>
+<mx:attr name=":">
+<mx:value>$FUNCTION.sap_core_callStoredProcedure(mxi_schema_attr_set_prop!!1,'DXC_ANALYZER_QUESTIONNAIRE_BENEFICIAL_1',0,0,5,'',0,'')$$</mx:value>
+</mx:attr>
+</mx:Class>
+<SOURCEENTRYTYPE/>
+</mx:Pass>
+<mx:Pass name="855a357c-f568-4628-bea6-4707d48b437a">
+<TYPE>ToODBC</TYPE>
+<DESCRIPTION>Create Attribute - Questionnaire Beneficial 2</DESCRIPTION>
+<REPOSITORY>0</REPOSITORY>
+<UPDATEDB>%$ddm.identitycenter%</UPDATEDB>
+<MAXDELETE>5%</MAXDELETE>
+<AUDITLEVEL>0</AUDITLEVEL>
+<DELTAENABLED>0</DELTAENABLED>
+<SKIP>0</SKIP>
+<JUSTDELTA>0</JUSTDELTA>
+<MARKDEL>0</MARKDEL>
+<AUTODELETE>0</AUTODELETE>
+<CURRTAB>2</CURRTAB>
+<READFROMPVO>0</READFROMPVO>
+<FILTEREDITSTATUS>0</FILTEREDITSTATUS>
+<USEIDSTORE>1</USEIDSTORE>
+<TODB>%$ddm.identitycenter%</TODB>
+<SQLUPDATE>1</SQLUPDATE>
+<mx:Class>
+<mx:attr name="DeltaKey">
+<mx:value>No_DeltaKey</mx:value>
+</mx:attr>
+<mx:attr name=":">
+<mx:value>$FUNCTION.sap_core_callStoredProcedure(mxi_schema_create_attr_ns!!1,'DXC_ANALYZER_QUESTIONNAIRE_BENEFICIAL_2','Is your corporate IT focus primarily on software from SAP?','DXC IDM Analyzer Question Beneficial 2',0,1)$$</mx:value>
+</mx:attr>
+<mx:attr name=":">
+<mx:value>$FUNCTION.sap_core_callStoredProcedure(mxi_schema_add_attr_to_oc_ns!!1,'MX_PERSON','DXC_ANALYZER_QUESTIONNAIRE_BENEFICIAL_2',0,1)$$</mx:value>
+</mx:attr>
+<mx:attr name=":">
+<mx:value>$FUNCTION.sap_core_callStoredProcedure(mxi_schema_attr_set_prop!!1,'DXC_ANALYZER_QUESTIONNAIRE_BENEFICIAL_2',0,0,5,'',0,'')$$</mx:value>
+</mx:attr>
+</mx:Class>
+<SOURCEENTRYTYPE/>
+</mx:Pass>
+</mx:Job>
+</mx:DSEJobs>
+</mx:EMS>
+</JOBDEFINITION>
+<MAX_LOGENTRIES>100</MAX_LOGENTRIES>
+<MCPUBLIC>0</MCPUBLIC>
+<MCREFERENCESTATUS>-1</MCREFERENCESTATUS>
+<MCSCRIPTSTATUS>0</MCSCRIPTSTATUS>
+<MCSOURCEGUID>A55171DC-3E93-4F12-9B48-34D4790E3FB2</MCSOURCEGUID>
+<MULTIPROVISION>0</MULTIPROVISION>
+<MXPROTECTED>0</MXPROTECTED>
+<NAME>01 - Create Attributes</NAME>
+<PRIORITY_ACTUAL>20</PRIORITY_ACTUAL>
+<PRIORITY_DEF>20</PRIORITY_DEF>
+<PROVISION>0</PROVISION>
+<REVISION_NUMBER>0</REVISION_NUMBER>
+<SCHEDULE_RULE>On demand</SCHEDULE_RULE>
+<STATE>1</STATE>
+</JOB>
+</JOBS>
+<FOLDERS>
+<FOLDER GROUPGUID="632F554F-64D0-4C6A-8C13-DBD32FE67BEE">
+<ACTIVATEDATE>1723625088793</ACTIVATEDATE>
+<GROUP_NAME>Processes</GROUP_NAME>
+<GROUP_STATUS>1</GROUP_STATUS>
+<MCPACKAGEID>com.dxc.idm.analyzer.installer</MCPACKAGEID>
+<MCSOURCEGUID>632F554F-64D0-4C6A-8C13-DBD32FE67BEE</MCSOURCEGUID>
+<PROVISION_GROUP>1</PROVISION_GROUP>
+<WFAUTOEXPAND>0</WFAUTOEXPAND>
+<WFDISPLAYORDER>50</WFDISPLAYORDER>
+<WFSHOWGROUP>0</WFSHOWGROUP>
+</FOLDER>
+<FOLDER GROUPGUID="8AE17170-062E-4A6E-BB94-2706ADE8A31B">
+<ACTIVATEDATE>1723625088790</ACTIVATEDATE>
+<GROUP_NAME>Jobs</GROUP_NAME>
+<GROUP_STATUS>1</GROUP_STATUS>
+<MCPACKAGEID>com.dxc.idm.analyzer.installer</MCPACKAGEID>
+<MCSOURCEGUID>8AE17170-062E-4A6E-BB94-2706ADE8A31B</MCSOURCEGUID>
+<PROVISION_GROUP>0</PROVISION_GROUP>
+<WFAUTOEXPAND>0</WFAUTOEXPAND>
+<WFDISPLAYORDER>50</WFDISPLAYORDER>
+<WFSHOWGROUP>0</WFSHOWGROUP>
+</FOLDER>
+<FOLDER GROUPGUID="D30E5D91-0D22-4121-9324-2957B6E25A43">
+<ACTIVATEDATE>1723625088793</ACTIVATEDATE>
+<GROUP_NAME>Forms</GROUP_NAME>
+<GROUP_STATUS>1</GROUP_STATUS>
+<MCPACKAGEID>com.dxc.idm.analyzer.installer</MCPACKAGEID>
+<MCSOURCEGUID>D30E5D91-0D22-4121-9324-2957B6E25A43</MCSOURCEGUID>
+<PROVISION_GROUP>5</PROVISION_GROUP>
+<WFAUTOEXPAND>0</WFAUTOEXPAND>
+<WFDISPLAYORDER>50</WFDISPLAYORDER>
+<WFSHOWGROUP>1</WFSHOWGROUP>
+</FOLDER>
+</FOLDERS>
+</PACKAGE>
+</PACKAGES>
+<DISPATCHERS>
+<DISPATCHER MACHINE="default_dispatcher">
+<JOBID>A55171DC-3E93-4F12-9B48-34D4790E3FB2</JOBID>
+<JOBID>98756D0D-104F-4A00-BADF-6B367942AC90</JOBID>
+<JOBID>5ABABFDC-0BE6-427D-8821-BE274EDE4F0F</JOBID>
+</DISPATCHER>
+</DISPATCHERS>
+<PACKAGE_HISTORY>
+<MCDESCRIPTION>Activated passes in installer job</MCDESCRIPTION>
+<MCMODIFIEDBYUSERNAME>DEVADMIN</MCMODIFIEDBYUSERNAME>
+<MCMODIFIEDDATE>1727768001000</MCMODIFIEDDATE>
+<MCPACKAGEID>com.dxc.idm.analyzer.installer</MCPACKAGEID>
+</PACKAGE_HISTORY>
+</IDM>
